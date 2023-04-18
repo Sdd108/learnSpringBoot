@@ -1,0 +1,53 @@
+### find all content
+GET http://localhost:8080/api/content
+
+### get content by id
+GET http://localhost:8080/api/content/2
+
+### create new content
+POST http://localhost:8080/api/content
+Content-Type: application/json
+
+{
+  "id": 3,
+  "title": "My 3rd Blog Post",
+  "desc": "my 3rd blog post",
+  "status": "IEDA",
+  "contentType": "ARTICLE",
+  "dateCreated": "2023-04-18T21:41:21.226081",
+  "dateUpdated": null,
+  "url": ""
+}
+
+### udpate exiting content
+PUT http://localhost:8080/api/content/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "title": "MY FIRST BLOG POST",
+  "desc": "This was just updated!",
+  "status": "IEDA",
+  "contentType": "ARTICLE",
+  "dateCreated": "2023-04-18T21:41:21.226081",
+  "dateUpdated": "2023-04-18T21:41:21.226081",
+  "url": "https://www.baidu.com/"
+}
+
+### udpate exiting content with invalid id
+PUT http://localhost:8080/api/content/2
+Content-Type: application/json
+
+{
+  "id": 2,
+  "title": "MY UPDATE POST",
+  "desc": "This was just updated!",
+  "status": "IEDA",
+  "contentType": "ARTICLE",
+  "dateCreated": "2023-04-18T21:41:21.226081",
+  "dateUpdated": "2023-04-18T21:41:21.226081",
+  "url": "https://www.baidu.com/"
+}
+
+### delete by id
+DELETE http://localhost:8080/api/content/3
